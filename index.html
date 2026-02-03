@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Lokall Locações - Aluguel de Carros em Salvador | Diárias a partir de R$ 100</title>
+    <meta name="description" content="Alugue carros em Salvador com seguro incluso, assistência 24h e sem burocracia. Fiat Mobi 2026. Diárias, mensais e planos para Uber/99.">
+    <meta name="keywords" content="aluguel de carros, locadora de veículos, Salvador, Bahia, Fiat Mobi, Uber, 99, diária, mensal">
+    <meta name="author" content="Lokall Locações">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lokalllocacoes.vercel.app/">
+    <meta property="og:title" content="Lokall Locações - Aluguel de Carros em Salvador">
+    <meta property="og:description" content="Alugue carros com facilidade e economia. Seguro incluso, assistência 24h. Diárias a partir de R$ 100,00.">
+    <meta property="og:image" content="https://lokalllocacoes.vercel.app/design-moderno.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lokalllocacoes.vercel.app/">
+    <meta property="twitter:title" content="Lokall Locações - Aluguel de Carros em Salvador">
+    <meta property="twitter:description" content="Alugue carros com facilidade e economia. Seguro incluso, assistência 24h. Diárias a partir de R$ 100,00.">
+    <meta property="twitter:image" content="https://lokalllocacoes.vercel.app/design-moderno.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231a365d'/%3E%3Cpath d='M25 55 L40 40 L60 40 L75 55 L75 65 L25 65 Z' fill='%23fff'/%3E%3Ccircle cx='35' cy='65' r='8' fill='%23333'/%3E%3Ccircle cx='65' cy='65' r='8' fill='%23333'/%3E%3C/svg%3E">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lokall-blue-dark': '#1a365d',
+                        'lokall-blue': '#2b6cb0',
+                        'lokall-green': '#38a169',
+                        'lokall-yellow': '#d69e2e',
+                        'lokall-gray': '#f7fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .whatsapp-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .feature-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .feature-card img {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-lokall-blue-dark flex items-center justify-center">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl md:text-2xl font-bold text-lokall-blue-dark">LOKALL</span>
+                        <span class="block text-xs text-lokall-blue tracking-widest">LOCAÇÕES</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-lokall-blue font-medium transition-colors">Início</a>
+                    <a href="#vantagens" class="text-gray-700 hover:text-lokall-blue font-medium transition-colors">Vantagens</a>
+                    <a href="#veiculo" class="text-gray-700 hover:text-lokall-blue font-medium transition-colors">Veículo</a>
+                    <a href="#planos" class="text-gray-700 hover:text-lokall-blue font-medium transition-colors">Planos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-lokall-blue font-medium transition-colors">Contato</a>
+                </div>
+                
+                <!-- CTA Button Desktop -->
+                <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20aluguel%20de%20veículos." 
+                   target="_blank"
+                   class="hidden md:flex items-center space-x-2 bg-lokall-green hover:bg-green-600 text-white px-5 py-2.5 rounded-full font-semibold transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>Fale Conosco</span>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#inicio" class="text-gray-700 hover:text-lokall-blue font-medium py-2 transition-colors">Início</a>
+                    <a href="#vantagens" class="text-gray-700 hover:text-lokall-blue font-medium py-2 transition-colors">Vantagens</a>
+                    <a href="#veiculo" class="text-gray-700 hover:text-lokall-blue font-medium py-2 transition-colors">Veículo</a>
+                    <a href="#planos" class="text-gray-700 hover:text-lokall-blue font-medium py-2 transition-colors">Planos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-lokall-blue font-medium py-2 transition-colors">Contato</a>
+                    <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20aluguel%20de%20veículos." 
+                       target="_blank"
+                       class="flex items-center justify-center space-x-2 bg-lokall-green hover:bg-green-600 text-white px-5 py-3 rounded-full font-semibold transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        <span>Fale Conosco</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="inicio" class="hero-gradient pt-24 md:pt-32 pb-16 md:pb-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left lg:w-1/2">
+                    <p class="text-lokall-yellow font-semibold mb-2 text-sm md:text-base tracking-wide">Pense Fácil, Alugue com a Lokall</p>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 leading-tight">
+                        Precisando de um<br>
+                        <span class="text-lokall-yellow">Carro Novo?</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-blue-100 mb-6">
+                        Alugue com Facilidade e Economia!
+                    </p>
+                    
+                    <!-- Price Badge -->
+                    <div class="inline-block bg-lokall-yellow text-lokall-blue-dark px-6 py-3 rounded-full font-bold text-lg md:text-xl mb-8 shadow-lg">
+                        Diárias a partir de R$ 100,00
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20reservar%20um%20veículo." 
+                           target="_blank"
+                           class="flex items-center justify-center space-x-2 bg-lokall-green hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>Reserve Agora pelo WhatsApp</span>
+                        </a>
+                        <a href="#planos" 
+                           class="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-full font-bold text-lg transition-all">
+                            <span>Ver Planos</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <!-- Car Image Placeholder - Replace with actual car images -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-4 md:p-6">
+                            <img src="design-moderno.webp" 
+                                 alt="Fiat Mobi 2026 - Lokall Locações" 
+                                 class="w-full h-auto rounded-2xl shadow-2xl"
+                                 loading="eager">
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-4 -right-4 md:bottom-4 md:right-4 bg-white rounded-2xl p-4 shadow-xl">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-lokall-green/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lokall-blue-dark">Fiat Mobi 2026</p>
+                                    <p class="text-sm text-gray-500">Interior Remodelado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VANTAGENS SECTION ==================== -->
+    <section id="vantagens" class="py-16 md:py-24 bg-lokall-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-lokall-blue-dark mb-4">
+                    Por que escolher a Lokall?
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Oferecemos a melhor experiência em aluguel de veículos em Salvador, com benefícios exclusivos para você.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Vantagem 1 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-hover fade-in">
+                    <div class="w-14 h-14 bg-lokall-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-start space-x-2 mb-3">
+                        <svg class="w-6 h-6 text-lokall-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-lokall-blue-dark">Seguro Completo Incluso</h3>
+                    </div>
+                    <p class="text-gray-600">Dirija com tranquilidade. Todos os nossos veículos possuem seguro completo sem custo adicional.</p>
+                </div>
+                
+                <!-- Vantagem 2 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-hover fade-in">
+                    <div class="w-14 h-14 bg-lokall-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-start space-x-2 mb-3">
+                        <svg class="w-6 h-6 text-lokall-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-lokall-blue-dark">Assistência 24 Horas</h3>
+                    </div>
+                    <p class="text-gray-600">Suporte disponível a qualquer hora do dia ou da noite. Estamos sempre prontos para ajudar.</p>
+                </div>
+                
+                <!-- Vantagem 3 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-hover fade-in">
+                    <div class="w-14 h-14 bg-lokall-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-start space-x-2 mb-3">
+                        <svg class="w-6 h-6 text-lokall-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-lokall-blue-dark">Manutenção por Nossa Conta</h3>
+                    </div>
+                    <p class="text-gray-600">Manutenção preventiva inclusa. Você não se preocupa com revisões ou imprevistos mecânicos.</p>
+                </div>
+                
+                <!-- Vantagem 4 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-hover fade-in">
+                    <div class="w-14 h-14 bg-lokall-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-start space-x-2 mb-3">
+                        <svg class="w-6 h-6 text-lokall-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-lokall-blue-dark">Sem Burocracia Excessiva</h3>
+                    </div>
+                    <p class="text-gray-600">Processo simples e rápido. Documentação mínima para você sair dirigindo o quanto antes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VEÍCULO SECTION ==================== -->
+    <section id="veiculo" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-lokall-blue-dark mb-4">
+                    Conheça o Fiat Mobi 2026
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Interior remodelado, econômico e com tecnologia de ponta. O carro ideal para o seu dia a dia.
+                </p>
+            </div>
+            
+            <!-- Vehicle Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
+                <div class="bg-lokall-gray rounded-2xl p-4 md:p-6 text-center fade-in">
+                    <p class="text-3xl md:text-4xl font-bold text-lokall-blue mb-2">75cv</p>
+                    <p class="text-gray-600 text-sm md:text-base">Motor 1.0 Firefly</p>
+                </div>
+                <div class="bg-lokall-gray rounded-2xl p-4 md:p-6 text-center fade-in">
+                    <p class="text-3xl md:text-4xl font-bold text-lokall-blue mb-2">15,1</p>
+                    <p class="text-gray-600 text-sm md:text-base">km/l na estrada</p>
+                </div>
+                <div class="bg-lokall-gray rounded-2xl p-4 md:p-6 text-center fade-in">
+                    <p class="text-3xl md:text-4xl font-bold text-lokall-blue mb-2">7"</p>
+                    <p class="text-gray-600 text-sm md:text-base">Central Multimídia</p>
+                </div>
+                <div class="bg-lokall-gray rounded-2xl p-4 md:p-6 text-center fade-in">
+                    <p class="text-3xl md:text-4xl font-bold text-lokall-blue mb-2">200L</p>
+                    <p class="text-gray-600 text-sm md:text-base">Porta-malas</p>
+                </div>
+            </div>
+            
+            <!-- Feature Categories -->
+            <div class="space-y-12 md:space-y-16">
+                
+                <!-- Tecnologia -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-lokall-blue/10 rounded-xl flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-lokall-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </span>
+                        Tecnologia
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="multimidia.webp" alt="Central Multimídia Uconnect 7 polegadas" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Central Multimídia</h4>
+                                <p class="text-sm text-gray-600">Uconnect 7" com Android Auto e Apple CarPlay wireless</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="ar-condicionado.webp" alt="Ar Condicionado" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Ar-Condicionado</h4>
+                                <p class="text-sm text-gray-600">Conforto térmico em qualquer clima</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="direcao.webp" alt="Direção Elétrica" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Direção Elétrica</h4>
+                                <p class="text-sm text-gray-600">Mais leve e precisa nas manobras</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="controle.webp" alt="Controle de Estabilidade" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Controle de Estabilidade</h4>
+                                <p class="text-sm text-gray-600">Segurança em curvas e frenagens</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="hill-holder.webp" alt="Hill Holder - Assistente de Rampa" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Hill Holder</h4>
+                                <p class="text-sm text-gray-600">Assistente de partida em rampa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Performance -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-lokall-blue/10 rounded-xl flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-lokall-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </span>
+                        Performance
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="motor.webp" alt="Motor 1.0 Firefly Econômico" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Motor 1.0 Firefly</h4>
+                                <p class="text-sm text-gray-600">75cv com consumo de até 15km/l na estrada</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="cambio.webp" alt="Câmbio com Inibidor de Ré" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Câmbio Inteligente</h4>
+                                <p class="text-sm text-gray-600">5 marchas com inibidor de ré</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="indicador.webp" alt="Indicador de Troca de Marcha" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Indicador de Marcha</h4>
+                                <p class="text-sm text-gray-600">Otimize o consumo com troca inteligente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design e Conforto -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-lokall-blue/10 rounded-xl flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-lokall-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </span>
+                        Design e Conforto
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="acabamento.webp" alt="Acabamento Interno Premium" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Acabamento Premium</h4>
+                                <p class="text-sm text-gray-600">Interior remodelado 2026</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="regulagem.webp" alt="Regulagem do Banco Dianteiro" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Banco com Regulagem</h4>
+                                <p class="text-sm text-gray-600">Ajuste ideal para seu conforto</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="tampa-traseira.webp" alt="Tampa Traseira com Vidro" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Tampa Traseira</h4>
+                                <p class="text-sm text-gray-600">Vidro de alta resistência</p>
+                            </div>
+                        </div>
+                        <div class="feature-card bg-lokall-gray rounded-2xl overflow-hidden shadow-md">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="tapete.webp" alt="Tapete Porta-Malas" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-lokall-blue-dark">Tapete Porta-Malas</h4>
+                                <p class="text-sm text-gray-600">Bordas elevadas para proteção</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviços Lokall -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-lokall-green/10 rounded-xl flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-lokall-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        Incluso no Aluguel
+                    </h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="feature-card bg-gradient-to-br from-lokall-green/10 to-lokall-blue/10 rounded-2xl overflow-hidden shadow-md flex flex-col md:flex-row">
+                            <div class="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
+                                <img src="manutencao.webp" alt="Manutenção Preventiva Inclusa" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="p-6 md:w-1/2 flex flex-col justify-center">
+                                <h4 class="text-xl font-bold text-lokall-blue-dark mb-2">Manutenção Inclusa</h4>
+                                <p class="text-gray-600 mb-4">Revisões preventivas e corretivas por nossa conta. Você só se preocupa em dirigir.</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-sm text-gray-600">
+                                        <svg class="w-5 h-5 text-lokall-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Troca de óleo e filtros
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600">
+                                        <svg class="w-5 h-5 text-lokall-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Revisão periódica completa
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600">
+                                        <svg class="w-5 h-5 text-lokall-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Assistência mecânica 24h
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-lokall-blue-dark rounded-2xl p-6 md:p-8 text-white flex flex-col justify-center">
+                            <h4 class="text-2xl font-bold mb-4">Economize de Verdade</h4>
+                            <p class="text-blue-100 mb-6">Com a Lokall você não paga IPVA, seguro, manutenção ou documentação. Tudo já está incluso no seu plano.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <p class="text-2xl font-bold">R$ 0</p>
+                                    <p class="text-sm text-blue-200">IPVA</p>
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <p class="text-2xl font-bold">R$ 0</p>
+                                    <p class="text-sm text-blue-200">Seguro</p>
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <p class="text-2xl font-bold">R$ 0</p>
+                                    <p class="text-sm text-blue-200">Manutenção</p>
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <p class="text-2xl font-bold">R$ 0</p>
+                                    <p class="text-sm text-blue-200">Documentação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PLANOS SECTION ==================== -->
+    <section id="planos" class="py-16 md:py-24 bg-lokall-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-lokall-blue-dark mb-4">
+                    Escolha o Plano Ideal para Você
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Temos opções para todas as necessidades. Seja para uso pessoal ou profissional.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <!-- Plano Diária -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl card-hover fade-in relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-lokall-yellow text-lokall-blue-dark text-xs font-bold px-4 py-1 rounded-bl-xl">
+                        POPULAR
+                    </div>
+                    <div class="w-16 h-16 bg-lokall-blue/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-lokall-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-2">Diária</h3>
+                    <p class="text-gray-600 mb-6">Perfeito para viagens curtas ou compromissos rápidos.</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-gray-500">A partir de</span>
+                        <p class="text-4xl font-extrabold text-lokall-blue-dark">R$ 100<span class="text-lg font-normal text-gray-500">/dia</span></p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Quilometragem livre
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Seguro incluso
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Assistência 24h
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5571996559262?text=Olá!%20Tenho%20interesse%20no%20plano%20DIÁRIA." 
+                       target="_blank"
+                       class="block w-full text-center bg-lokall-blue hover:bg-lokall-blue-dark text-white py-4 rounded-xl font-semibold transition-colors">
+                        Consultar Disponibilidade
+                    </a>
+                </div>
+                
+                <!-- Plano Mensal -->
+                <div class="bg-lokall-blue-dark rounded-3xl p-6 md:p-8 shadow-xl card-hover fade-in relative overflow-hidden transform md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-lokall-green text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
+                        MAIS ECONOMIA
+                    </div>
+                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Mensal</h3>
+                    <p class="text-blue-200 mb-6">A melhor opção para quem busca um carro próprio sem os custos de IPVA, Seguro e manutenção.</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-blue-300">Consulte valores</span>
+                        <p class="text-4xl font-extrabold text-white">Sob Consulta</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-blue-100">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Sem IPVA ou documentação
+                        </li>
+                        <li class="flex items-center text-blue-100">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Manutenção inclusa
+                        </li>
+                        <li class="flex items-center text-blue-100">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Seguro completo
+                        </li>
+                        <li class="flex items-center text-blue-100">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Assistência 24h
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5571996559262?text=Olá!%20Tenho%20interesse%20no%20plano%20MENSAL." 
+                       target="_blank"
+                       class="block w-full text-center bg-lokall-green hover:bg-green-600 text-white py-4 rounded-xl font-semibold transition-colors">
+                        Solicitar Orçamento
+                    </a>
+                </div>
+                
+                <!-- Plano Aplicativo -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl card-hover fade-in relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-lokall-blue text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
+                        MOTORISTAS
+                    </div>
+                    <div class="w-16 h-16 bg-lokall-blue/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-lokall-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-lokall-blue-dark mb-2">Para Aplicativo</h3>
+                    <p class="text-gray-600 mb-6">Planos especiais para motoristas Uber e 99.</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-gray-500">Condições especiais</span>
+                        <p class="text-4xl font-extrabold text-lokall-blue-dark">Sob Consulta</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Carro pronto para app
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Economia garantida
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-lokall-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Suporte dedicado
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5571996559262?text=Olá!%20Sou%20motorista%20de%20aplicativo%20e%20tenho%20interesse%20no%20plano%20especial." 
+                       target="_blank"
+                       class="block w-full text-center bg-lokall-blue hover:bg-lokall-blue-dark text-white py-4 rounded-xl font-semibold transition-colors">
+                        Falar com Especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL SECTION ==================== -->
+    <section id="contato" class="py-16 md:py-24 hero-gradient">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Reserve o Seu Hoje Mesmo!
+                </h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Não perca tempo! Entre em contato agora pelo WhatsApp e garanta seu veículo com as melhores condições.
+                </p>
+                
+                <!-- WhatsApp Button Large -->
+                <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20aluguel%20de%20veículos." 
+                   target="_blank"
+                   class="inline-flex items-center space-x-4 bg-lokall-green hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-2xl mb-8">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>(71) 9 96559262</span>
+                </a>
+                
+                <p class="text-blue-200 text-sm">
+                    Atendimento de segunda a sábado, das 8h às 18h
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-lokall-blue-dark py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-white">LOKALL</span>
+                        <span class="block text-xs text-blue-300 tracking-widest">LOCAÇÕES</span>
+                    </div>
+                </div>
+                
+                <!-- Info -->
+                <div class="text-center md:text-left">
+                    <p class="text-blue-200 text-sm">Salvador - BA</p>
+                    <p class="text-white font-semibold">(71) 9 96559262</p>
+                </div>
+                
+                <!-- Social / WhatsApp -->
+                <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20aluguel%20de%20veículos." 
+                   target="_blank"
+                   class="flex items-center space-x-2 bg-lokall-green hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            
+            <hr class="border-white/10 my-8">
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-300">
+                <p>&copy; 2026 Lokall Locações. Todos os direitos reservados.</p>
+                <p class="italic">"Pense Fácil, Alugue com a Lokall"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+    <a href="https://wa.me/5571996559262?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20aluguel%20de%20veículos." 
+       target="_blank"
+       id="whatsapp-float"
+       class="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5C] rounded-full flex items-center justify-center shadow-2xl z-50 whatsapp-pulse transition-transform hover:scale-110"
+       aria-label="Fale conosco pelo WhatsApp">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // WhatsApp float visibility on scroll
+        const whatsappFloat = document.getElementById('whatsapp-float');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                whatsappFloat.classList.remove('scale-0');
+                whatsappFloat.classList.add('scale-100');
+            }
+        });
+    </script>
+</body>
+</html>
